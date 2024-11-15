@@ -3,8 +3,11 @@ import { baseClient } from ".";
 import { ApiResponse } from "./types";
 import { normalizeJSONArticle, normalizeRssArticle } from "./utilities";
 
+const baseURL = process.env.NEXT_PUBLIC_API_BASE;
+
 export const feedFunctions = {
   rss: async (url: string): Promise<ApiResponse<FeedItem[]>> => {
+    console.log({baseURL});
     try {
       const { data, status } = await baseClient.get(`/rss?feed=${url}`);
         return { status, data: data.data.map(normalizeRssArticle) };
