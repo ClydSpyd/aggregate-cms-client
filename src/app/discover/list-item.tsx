@@ -43,6 +43,7 @@ export default function ListItem({
             quality={1}
             src={item.imgUrl}
             alt={`${item.name}_logo`}
+            loading="lazy"
           />
         </div>
         <div className="grow">
