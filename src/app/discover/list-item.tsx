@@ -40,6 +40,7 @@ export default function ListItem({
           <Image
             layout="fill"
             objectFit="cover"
+            quality={1}
             src={item.imgUrl}
             alt={`${item.name}_logo`}
           />
